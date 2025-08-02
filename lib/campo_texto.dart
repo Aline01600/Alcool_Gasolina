@@ -34,6 +34,15 @@ class _CampoTextoState extends State<CampoTexto> {
       
       body: Column(
         children: [
+          const SizedBox(height: 24), // Espaço
+          
+          Image.asset(
+            'assets/imagens/logo.png',
+            height: 150, 
+          ),
+          
+          const SizedBox(height: 24),
+
           Padding(
             padding: const EdgeInsets.all(16),
             
