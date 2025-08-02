@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'campo_texto.dart'; // se renomear o arquivo
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: CampoTexto(),
-    );
-  }
-}
+import 'campo_texto.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home:CampoTexto(),
+    )
+  );
 }
