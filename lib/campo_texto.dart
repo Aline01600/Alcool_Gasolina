@@ -43,6 +43,14 @@ class _CampoTextoState extends State<CampoTexto> {
           
           const SizedBox(height: 24),
 
+          const Text(
+            ' Saiba qual a melhor opção \npara abastecimento do seu carro',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.all(16),
             
@@ -51,7 +59,7 @@ class _CampoTextoState extends State<CampoTexto> {
               maxLengthEnforcement: MaxLengthEnforcement.none,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: "Preço do álcool",
+                labelText: "Preço do álcool, ex 1.59",
               ),
              
               style: const TextStyle(fontSize: 25, color: Colors.green),
@@ -72,7 +80,7 @@ class _CampoTextoState extends State<CampoTexto> {
               maxLengthEnforcement: MaxLengthEnforcement.none,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: "Preço da gasolina",
+                labelText: "Preço da gasolina, ex 3.15",
               ),
               
               style: const TextStyle(fontSize: 25, color: Colors.green),
@@ -82,6 +90,30 @@ class _CampoTextoState extends State<CampoTexto> {
               onSubmitted: (_) {
                 print("Gasolina: ${_controllerGasolina.text}");
               },
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          ElevatedButton(
+            onPressed: () {
+              
+            },
+
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue, // Cor azul
+              fixedSize: const Size(380, 50), // Largura 200 e altura 50
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero, // Cantos quadrados (sem arredondar)
+              ),
+            ),
+
+            child: const Text(
+              'Calcular',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white, 
+              ),
             ),
           ),
         ],
