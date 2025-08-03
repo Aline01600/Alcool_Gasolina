@@ -32,91 +32,93 @@ class _CampoTextoState extends State<CampoTexto> {
         ), 
       ),
       
-      body: Column(
-        children: [
-          const SizedBox(height: 24), // Espaço
-          
-          Image.asset(
-            'assets/imagens/logo.png',
-            height: 150, 
-          ),
-          
-          const SizedBox(height: 24),
+      body: Center(
+        child: Container(
+          width: 400, 
 
-          const Text(
-            ' Saiba qual a melhor opção \npara abastecimento do seu carro',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch, // Ocupa toda a largura disponível
+            children: [
+              const SizedBox(height: 24),
 
-          Padding(
-            padding: const EdgeInsets.all(16),
-            
-            child: TextField(
-              maxLength: 6,
-              maxLengthEnforcement: MaxLengthEnforcement.none,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
+              Image.asset(
+                'assets/imagens/logo.png',
+                height: 150, 
+              ),
+
+              const SizedBox(height: 24),
+
+              const Text(
+                ' Saiba qual a melhor opção \npara abastecimento do seu carro',
+                
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              TextField(
+                maxLength: 6,
+                maxLengthEnforcement: MaxLengthEnforcement.none,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                
                 labelText: "Preço do álcool, ex 1.59",
+                ),
+                
+                style: const TextStyle(fontSize: 25, color: Colors.green),
+                
+                controller: _controllerAlcool,
+                onSubmitted: (_) {
+                  print("Álcool: ${_controllerAlcool.text}");
+                },
               ),
-             
-              style: const TextStyle(fontSize: 25, color: Colors.green),
-             
-              controller: _controllerAlcool,
 
-              onSubmitted: (_) {
-                print("Álcool: ${_controllerAlcool.text}");
-              },
-            ),
-          ),
-         
-          Padding(
-            padding: const EdgeInsets.all(16),
-            
-            child: TextField(
-              maxLength: 6,
-              maxLengthEnforcement: MaxLengthEnforcement.none,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
+              const SizedBox(height: 8),
+
+              TextField(
+                maxLength: 6,
+                maxLengthEnforcement: MaxLengthEnforcement.none,
+                keyboardType: TextInputType.number,
+                
+                decoration: const InputDecoration(
                 labelText: "Preço da gasolina, ex 3.15",
+                ),
+                
+                style: const TextStyle(fontSize: 25, color: Colors.green),
+                
+                controller: _controllerGasolina,
+                onSubmitted: (_) {
+                  print("Gasolina: ${_controllerGasolina.text}");
+                },
               ),
-              
-              style: const TextStyle(fontSize: 25, color: Colors.green),
-              
-              controller: _controllerGasolina,
-              
-              onSubmitted: (_) {
-                print("Gasolina: ${_controllerGasolina.text}");
-              },
-            ),
+
+              const SizedBox(height: 16),
+
+              ElevatedButton(
+                onPressed: () {
+                  
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  fixedSize: const Size.fromHeight(50),
+                  
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                
+                child: const Text(
+                  'Calcular',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ],
           ),
-
-          const SizedBox(height: 16),
-
-          ElevatedButton(
-            onPressed: () {
-              
-            },
-
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue, // Cor azul
-              fixedSize: const Size(380, 50), // Largura 200 e altura 50
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.zero, // Cantos quadrados (sem arredondar)
-              ),
-            ),
-
-            child: const Text(
-              'Calcular',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white, 
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
